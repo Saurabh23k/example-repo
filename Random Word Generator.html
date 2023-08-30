@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Word Generator</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Word Generator</h1>
+    <button onclick="generateRandomWord()">Generate Word</button>
+    <div id="result"></div>
+
+    <script>
+        function generateRandomWord() {
+            var words = [
+                "apple", "banana", "cherry", "orange", "grape", "lemon", "mango",
+                "strawberry", "watermelon", "kiwi", "pineapple", "pear", "peach",
+                "blueberry", "raspberry", "coconut", "pomegranate", "avocado", "fig",
+                "plum", "blackberry", "apricot", "lime", "nectarine", "melon", "guava",
+                "dragonfruit", "persimmon", "grapefruit", "cantaloupe", "papaya",
+                "boysenberry", "rhubarb", "passionfruit", "mulberry", "lychee", "cranberry",
+                "tangerine", "kumquat", "marionberry", "huckleberry", "elderberry",
+                "gooseberry", "quince", "date", "currant", "durian", "starfruit",
+                "pawpaw", "jackfruit", "acai", "breadfruit", "kiwano", "pricklypear",
+                "soursop", "ackee", "tamarind", "rambutan", "plantain", "carambola",
+                "lychee", "mangosteen", "saskatoonberry", "bilberry", "lingonberry",
+                "yuzu", "feijoa", "pummelo", "persimmon", "cactusfruit", "pomelo",
+                "cupuacu", "jabuticaba", "langsat", "sapodilla", "tamarillo", "ugli",
+                "salak", "chayote", "breadnut", "prune", "chirimoya", "tamarind",
+                "loquat", "quandong", "santol", "bignay", "champagne", "mandarin",
+                "zucchini", "rhubarb", "sorrel", "asparagus", "broccoli", "carrot",
+                "cauliflower", "celery", "cucumber", "eggplant", "lettuce", "onion",
+                "pepper", "potato", "tomato", "radish", "spinach", "squash", "yam"
+            ];
+
+            var randomIndex = Math.floor(Math.random() * words.length);
+            var randomWord = words[randomIndex];
+
+            var result = document.getElementById("result");
+            result.innerHTML = "Random word: " + randomWord;
+        }
+    </script>
+</body>
+</html>
