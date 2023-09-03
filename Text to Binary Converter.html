@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text to Binary Converter</title>
+    <script>
+        function convertToBinary() {
+            var text = document.getElementById("inputText").value;
+            var binary = "";
+            for (var i = 0; i < text.length; i++) {
+                binary += text[i].charCodeAt(0).toString(2) + " ";
+            }
+            document.getElementById("outputBinary").textContent = binary;
+        }
+    </script>
+</head>
+<body>
+    <h1>Text to Binary Converter</h1>
+    <label for="inputText">Enter Text:</label>
+    <input type="text" id="inputText" placeholder="Type text here">
+    <button onclick="convertToBinary()">Convert</button>
+    <h2>Binary Representation:</h2>
+    <p id="outputBinary"></p>
+</body>
+</html>
