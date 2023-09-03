@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JPG TO PNG Converter</title>
+  <style>
+    #outputImage {
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    function convertToPNG() 
+    {
+      var input = document.getElementById('inputImage');
+      var output = document.getElementById('outputImage');
+      var downloadBtn = document.getElementById('downloadBtn');
+      
+      var canvas = document.createElement('canvas');
+      var ctx = canvas.getContext('2d');
+      
+      var img = new Image();
+      img.src = URL.createObjectURL(input.files[0]);
+      
+      img.onload = function() 
+      {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        
+        var convertedImage = canvas.toDataURL('image/png');
+        output.src = convertedImage;
+        downloadBtn.href = convertedImage;
+        downloadBtn.download = 'converted.png';
+        downloadBtn.style.display = 'inline';
+      };
+    }
+  </script>
+</head>
+<body>
+  <h1>Image Converter</h1>
+  
+  <input type="file" id="inputImage" accept="image/jpeg" />
+  <button onclick="convertToPNG()">Convert to PNG</button>
+  
+  <br />
+  
+  <img id="outputImage" />
+  
+  <br />
+  
+  <a id="downloadBtn" style="display: none;">Download PNG</a>
+</body>
+</html>
